@@ -7,7 +7,7 @@ Aside this, this library will contain implementations of existing encryption Alg
 
 - [sha3cipher](http://godoc.org/github.com/maxymania/goencrypt/sha3cipher) This package implements encryption algorithms based on sha3 SHAKE.
 - [salsabc](http://godoc.org/github.com/maxymania/goencrypt/salsabc) This package is the reference implementation of the SalsaBC block cipher.
-
+- [camellia](http://godoc.org/github.com/maxymania/goencrypt/camellia) This package is a port of OpenSSLs CAMELLIA implementation, not Apache Licensed, but non-GPL
 
 # License (Apache license)
 
