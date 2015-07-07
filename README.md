@@ -1,5 +1,6 @@
 # goencrypt
 Experimental/new encryption algorithms for Go
+Aside this, this library will contain implementations of existing encryption Algorithms.
 
 # Packages
 
@@ -23,3 +24,4 @@ Experimental/new encryption algorithms for Go
    See the License for the specific language governing permissions and
    limitations under the License.
 
+NOTE: There may be algorithms, parts or dependencies, distributed under different license.
