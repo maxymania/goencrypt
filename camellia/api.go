@@ -22,6 +22,7 @@ type Camellia struct{
 	table *KEY_TABLE_TYPE
 }
 // Initializes the structure. Must be called before any Encrypt or Decrypt method.
+// Key length should be one of 16,24 or 32.
 func (c *Camellia) Init(key []byte) error{
 	switch len(key){
 	case 16,24,32:
