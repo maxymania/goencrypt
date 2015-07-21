@@ -39,4 +39,6 @@ func (c *Camellia) Encrypt(dest, src []byte) {
 func (c *Camellia) Decrypt(dest, src []byte) {
 	Camellia_DecryptBlock_Rounds(c.rounds,src,c.table,dest)
 }
-
+func (c *Camellia) BlockSize() int {
+	return 16
+}
