@@ -6,9 +6,10 @@ Aside this, this library will contain implementations of existing encryption Alg
 # Packages
 
 - [sha3cipher](http://godoc.org/github.com/maxymania/goencrypt/sha3cipher) This package implements encryption algorithms based on sha3 SHAKE.
-- [salsabc](http://godoc.org/github.com/maxymania/goencrypt/salsabc) This package is the reference implementation of the SalsaBC block cipher.
+- [recore](http://godoc.org/github.com/maxymania/goencrypt/recore) This package is the implements ReCore a experimental block cipher based on Salsa20.
 - [camellia](http://godoc.org/github.com/maxymania/goencrypt/camellia) This package is a port of OpenSSLs CAMELLIA implementation, not Apache Licensed, but non-GPL
 - [cipher2](http://godoc.org/github.com/maxymania/goencrypt/cipher2) This package provides an extension for crypto/cipher, namely streaming for Block-Cipher encoded data.
+- [salsa20s](http://godoc.org/github.com/maxymania/goencrypt/salsa20s) Implements the cipher.Stream version of salsa20 ontop of "golang.org/x/crypto/salsa20".
 
 # License (Apache license)
 
