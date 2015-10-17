@@ -18,6 +18,11 @@ package cipher2
 
 import "crypto/cipher"
 
+func min(a,b int) int {
+	if a<b { return a }
+	return b
+}
+
 type bufferedBlockCipher struct{
 	mode   cipher.BlockMode
 	blkSiz int
@@ -45,8 +50,9 @@ func (b *bufferedBlockCipher) UpdateOutputSize(srcLength int) int {
 func (b *bufferedBlockCipher) ProcessBytes(dst []byte, src []byte) (n int,err error) {
 	n = 0
 	err = nil
+	if len(src)==0 { return }
 	if b.bufOff!=0 {
-		rest := b.blkSiz-b.bufOff
+		rest := min(b.blkSiz-b.bufOff,len(src))
 		copy(b.buf[b.bufOff:],src[:rest])
 		b.bufOff+=rest
 		if b.bufOff<b.blkSiz { return }
@@ -57,10 +63,12 @@ func (b *bufferedBlockCipher) ProcessBytes(dst []byte, src []byte) (n int,err er
 	}
 	il := len(src)
 	il -= il%b.blkSiz
-	b.mode.CryptBlocks(dst[:il],src[:il])
-	n += il
-	dst = dst[il:]
-	src = src[il:]
+	if il>0 {
+		b.mode.CryptBlocks(dst[:il],src[:il])
+		n += il
+		dst = dst[il:]
+		src = src[il:]
+	}
 	b.bufOff=len(src)
 	copy(b.buf[:b.bufOff],src)
 	return
